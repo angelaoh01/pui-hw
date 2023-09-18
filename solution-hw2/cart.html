@@ -2,85 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Product Gallery</title>
-    <link rel="stylesheet" href="hw1.css">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="hw2.css">
   </head>
   
   <body>
-    <a href="/solution-hw1/detail.html"> <img id = "logo" src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
-        width="400"
-        alt="bun bun logo"/> </a>
-    <hr>
-    <section id = "navigation">
-      <nav>
-        <a href="/solution-hw1/gallery.html"> 
-          <h3>
-            products 
-          </h3>
-        </a>
-        <a href="/solution-hw1/cart.html">
-          <h3 id = "cart">
-            cart 
-          </h3> 
-        </a>
-      </nav>
-    </section>
-
-    <section id = "about">
-      <h2>
-        Shopping Cart
-      </h2>
-    </section>
-
-    <section id = "shopping">
-        <div>
-          <div  class = "items">
-            <a href="/solution-hw1/detail.html">
-              <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
-              width = "200"
-              alt = "Original cinnamon roll"/>
-            </a>
-            <p class = "remove">Remove</p>
+    <!-- Header -->
+    <section id = "header">
+        <div id = "header-logo">
+            <a href="/solution-hw2/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
+                alt="bun bun logo"/> </a> 
+        </div>
+            <!-- Product and Cart Options-->
+        <div id = "header-navigation">
+            <div id = "header-choices">
+                <div id = "products">
+                    <a href="/solution-hw2/gallery.html"> products </a>
+                </div>
+                <div id = "cart-main">
+                    <a href="/solution-hw2/cart.html"> cart </a>
+                </div>
+            </div> 
+            <hr>
+                <!-- Page Title -->
+            <div id = "header-title">
+                <h2>
+                    Shopping cart
+                </h2>
             </div>
-            <div class = "description">
-                <a href="/solution-hw1/detail.html">
-                <p>Original cinnamon roll</p>
+        </div> 
+    </section>
+
+    <!-- Shopping Cart-->
+    <section id = "cart-page">
+        <div class = "cart-items">
+            <!-- Cart Item 1-->
+            <div  class = "cart-images">
+                <a href="/solution-hw2/detail.html">
+                    <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
+                    alt = "Original cinnamon roll"/>
                 </a>
+                <p class = "cart-remove">Remove</p>
+            </div>
+            <div class = "cart-description">
+                <a href="/solution-hw2/detail.html">Original cinnamon roll</a>
                 <p>Glazing: Keep original</p>
                 <p>Pack Size: 1</p>
             </div>
-            <div class = "price">
+            <!-- Prices -->
+            <div class = "cart-price">
                 <p>$2.49</p>
             </div>
         </div>
 
-        <div>
-            <div class = "items">
-                <a href="/solution-hw1/detail.html">
+        <div class = "cart-items">
+            <!-- Cart Item 2-->
+            <div class = "cart-images">
+                <a href="/solution-hw2/detail.html">
                     <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/double-chocolate-cinnamon-roll.jpg?raw=true"
-                    width = "200"
                     alt = "Double chocolate cinnamon roll"/>
-                  </a>
-              <p class = "remove">Remove</p>
+                </a>
+                <p class = "cart-remove">Remove</p>
             </div>
-            <div class = "description">
-              <a href="/solution-hw1/detail.html">
-                <p>Double chocolate cinnamon roll</p>
-              </a>
+            <div class = "cart-description">
+              <a href="/solution-hw2/detail.html">Double chocolate cinnamon roll</a>
               <p>Glazing: Sugar milk</p>
               <p>Pack Size: 6</p>
-          </div>
-          <div class = "price">
-              <p>$27.45</p>
-          </div>
+            </div>
+            <!-- Prices -->
+            <div class = "cart-price">
+                <p>$27.45</p>
+            </div>
         </div>
     </section>
+    
+    <!-- Bottom Total Section-->
     <section id= "checkout">
-        <hr>
-        <div id = "total">
-            <p>Total: $29.94</p>
+        <hr id = "checkout-line">
+        <div id = "cart-total">
+            <p id="checkout-total">Total</p>
+            <p id="checkout-price">$29.94</p>
         </div>
-        <button type = "button">
+        <button id = "checkout-button" type = "button">
             Checkout
         </button>
     </section>
