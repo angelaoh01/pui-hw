@@ -152,17 +152,6 @@ hr {
     font-weight: bold;
     }
 
-/*
-.summary{
-    width: 400px;
-    border: 5px;
-    padding: 10px;
-    margin-top: 50px;
-    margin-left: 355px;
-    margin-right:355px;
-}
-*/
-
 /* Detail */
 
 #detail{
@@ -192,7 +181,7 @@ hr {
     font-size: 90%;
 }
 
-#glazing > p{
+#glazing-option > p{
     margin: 3%;
     font-size: 90%;
 }
@@ -253,7 +242,6 @@ button{
 
 .cart-items{
     display: flex;
-    flex-direction: row-align;
     column-gap: 5%;
 }
 
@@ -327,14 +315,4 @@ button{
 #checkout-button {
     margin-left: 52%;
     margin-top: 3%;
-}
-
-
-.info{
-    width: 400px;
-    border: 0px;
-    padding: 10px;
-    margin-left: 360px;
-    margin-right: 360px;
-    text-align: left;
 }
