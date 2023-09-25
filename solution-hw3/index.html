@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Product Gallery</title>
+    <title>Product Detail</title>
     <link rel="stylesheet" href="hw2.css">
-    <script defer src="price.js"></script>
-  </head>
+    <script src= "price.js"text/javascript"></script>
   
   <body>
     <!-- Header -->
@@ -28,105 +27,65 @@
                 <!-- Page Title -->
             <div id = "header-title">
                 <h2>
-                    Our hand-made cinnamon rolls
+                    Original cinnamon roll
                 </h2>
             </div>
         </div> 
     </section>
 
-    <!-- The Gallery -->
-    <section id = "gallery">
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
-            alt = "Original cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Original cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$2.49</p>
-        </div>
-      </div>
-      
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/apple-cinnamon-roll.jpg?raw=true"
-            alt = "Apple cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Apple cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.49</p>
-        </div>
-      </div>
+    <!-- Detail -->
+    <section id = "detail">
+         <!-- Image on Left Side-->
+        <section id = "detail-image">
+            <a href="/pui-hw/solution-hw2/detail.html">
+                <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
+                width = "600"
+                alt = "Original cinnamon roll"/>
+            </a>
+        </section>
 
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/raisin-cinnamon-roll.jpg?raw=true"
-            alt = "Raisin cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Raisin cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$2.99</p>
-        </div>
-      </div>
+        <!-- Description on Right Side-->
+        <section id = "detail-description">
+            <div id = "detail-comment">
+                <p>Customize our delicious,
+                    hand-made cinammon roll to
+                    your liking!</p>
+            </div>
 
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/walnut-cinnamon-roll.jpg?raw=true"
-            alt = "Walnut cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Walnut cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.49</p>
-        </div>
-      </div>
+            <div id = "detail-options">
+                <div id = "glazing-option">
+                    <p>Glazing:</p>
+                    <div class = "dropdown">
+                        <select name="glazing" id="glazing" onChange = "glazingChange(this)">
+                            <option value="0">Keep original</option>
+                            <option value="1">Sugar milk</option>
+                            <option value="2">Vanilla milk</option>
+                            <option value="3">Double chocolate</option>
+                        </select>
+                    </div>
+                </div>
+                <div id = "pack-size">
+                    <p>Pack size:</p>
+                    <div class = "dropdown">
+                        <select name="size" id="size" onChange = "packChange(this)">
+                            <option value="0">1</option>
+                            <option value="1">3</option>
+                            <option value="2">6</option>
+                            <option value="3">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/double-chocolate-cinnamon-roll.jpg?raw=true"
-            alt = "Double chocolate cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Double chocolate cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.99</p>
-        </div>
-      </div>
-
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw2/detail.html">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/strawberry-cinnamon-roll.jpg?raw=true"
-            alt = "Strawberry cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw2/detail.html">Strawberry cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.99</p>
-        </div>
-      </div>
+            <div id="detail-total">
+                <p id = "detail-price"> 
+                    2.49
+                </p>
+                <button type="button">
+                    Add to cart
+                </button>    
+            </div>
+        </section>
     </section>
-
-    
-  </body>
+    </body>
 </html>
