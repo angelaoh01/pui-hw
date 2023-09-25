@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="hw2.css">
+    <script defer src="price.js"></script>
+  </head>
+  
+  <body>
+    <!-- Header -->
+    <section id = "header">
+        <div id = "header-logo">
+            <a href="/pui-hw/solution-hw2/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
+                alt="bun bun logo"/> </a> 
+        </div>
+            <!-- Product and Cart Options-->
+        <div id = "header-navigation">
+            <div id = "header-choices">
+                <div id = "products">
+                    <a href="/pui-hw/solution-hw2/gallery.html"> products </a>
+                </div>
+                <div id = "cart-main">
+                    <a href="/pui-hw/solution-hw2/cart.html"> cart </a>
+                </div>
+            </div> 
+            <hr>
+                <!-- Page Title -->
+            <div id = "header-title">
+                <h2>
+                    Shopping cart
+                </h2>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Shopping Cart-->
+    <section id = "cart-page">
+        <div class = "cart-items">
+            <!-- Cart Item 1-->
+            <div  class = "cart-images">
+                <a href="/pui-hw/solution-hw2/detail.html">
+                    <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
+                    alt = "Original cinnamon roll"/>
+                </a>
+                <p class = "cart-remove">Remove</p>
+            </div>
+            <div class = "cart-description">
+                <a href="/pui-hw/solution-hw2/detail.html">Original cinnamon roll</a>
+                <p>Glazing: Keep original</p>
+                <p>Pack Size: 1</p>
+            </div>
+            <!-- Prices -->
+            <div class = "cart-price">
+                <p>$2.49</p>
+            </div>
+        </div>
+
+        <div class = "cart-items">
+            <!-- Cart Item 2-->
+            <div class = "cart-images">
+                <a href="/pui-hw/solution-hw2/detail.html">
+                    <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/double-chocolate-cinnamon-roll.jpg?raw=true"
+                    alt = "Double chocolate cinnamon roll"/>
+                </a>
+                <p class = "cart-remove">Remove</p>
+            </div>
+            <div class = "cart-description">
+              <a href="/pui-hw/solution-hw2/detail.html">Double chocolate cinnamon roll</a>
+              <p>Glazing: Sugar milk</p>
+              <p>Pack Size: 6</p>
+            </div>
+            <!-- Prices -->
+            <div class = "cart-price">
+                <p>$27.45</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bottom Total Section-->
+    <section id= "checkout">
+        <hr id = "checkout-line">
+        <div id = "cart-total">
+            <p id="checkout-total">Total</p>
+            <p id="checkout-price">$29.94</p>
+        </div>
+        <button id = "checkout-button" type = "button">
+            Checkout
+        </button>
+    </section>
+  </body>
+</html>
