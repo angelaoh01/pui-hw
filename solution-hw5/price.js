@@ -74,6 +74,7 @@ let glazingOptions = [
 
 const cart = [];
 let totalPrice = 0;
+let index = "0";
 
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
@@ -92,8 +93,7 @@ function addToCart(element){
     let packSizeMultiple = packSizeOptions[packSizeChoice].size;
     let packSize = packSizeOptions[packSizeChoice].pack;
     let myRoll = new Roll(rollType, glazing, packSizeMultiple, Math.round(100*(rolls[rollType].basePrice+glazingPrice)*packSize)/100);
-    cart.push(myRoll);
-    total = total + Math.round(100*(rolls[rollType].basePrice+glazingPrice)*packSize)/100;
+    cart.unshift(myRoll);
     return cart;
 }
 
@@ -101,10 +101,10 @@ let itemOne = new Roll(Object.keys(rolls)[0], glazingOptions[1].glazing, packSiz
 let itemTwo = new Roll(Object.keys(rolls)[3], glazingOptions[2].glazing, packSizeOptions[3].size, Math.round(100*(rolls.Walnut.basePrice+glazingOptions[2].price)*packSizeOptions[3].pack)/100);
 let itemThree = new Roll(Object.keys(rolls)[2], glazingOptions[1].glazing, packSizeOptions[1].size, Math.round(100*(rolls.Raisin.basePrice+glazingOptions[1].price)*packSizeOptions[1].pack)/100);
 let itemFour = new Roll(Object.keys(rolls)[1], glazingOptions[0].glazing, packSizeOptions[1].size, Math.round(100*(rolls.Apple.basePrice+glazingOptions[0].price)*packSizeOptions[1].pack)/100);
-cart.push(itemOne);
-cart.push(itemTwo);
-cart.push(itemThree);
-cart.push(itemFour);
+cart.unshift(itemOne);
+cart.unshift(itemTwo);
+cart.unshift(itemThree);
+cart.unshift(itemFour);
 
 function addRoll(roll){
     const template = document.querySelector('#cart-template');
@@ -123,16 +123,35 @@ function updateElement(roll){
     const cartPriceElement = roll.element.querySelector('.cart-price');
     const cartTotalPrice = document.querySelector('#checkout-price');
 
-    // copy our notecard content over to the corresponding HTML elements
     cartImageElement.src = 'https://github.com/angelaoh01/pui-hw/blob/main/assets/products/' + rolls[roll.type].imageFile + "?raw=true";
     cartDescriptionElement.innerText = roll.type + " Cinnamon Roll";
     cartGlazingElement.innerText = roll.glazing;
+    cartPriceElement.innerText = "$ " + Math.round(100*roll.basePrice)/100;
     cartPackElement.innerText = "Pack Size: " + roll.size;
-    cartPriceElement.innerText = "$ " + roll.basePrice;
     totalPrice = totalPrice + roll.basePrice;
-    cartTotalPrice.innerText = "$ " + totalPrice;
+    cartTotalPrice.innerText = "$ " + Math.round(100*totalPrice)/100;
 }
-addRoll(itemOne);
-addRoll(itemTwo);
-addRoll(itemThree);
-addRoll(itemFour);
+
+function removeItem(button){
+    if (cart.length > 0){
+        const parentImageRoll = button.parentElement;
+        const parentRoll = parentImageRoll.parentElement;
+        console.log(parentRoll);
+        const rollType = parentRoll.querySelector('#cart-type').innerText;
+        const glazingOption = parentRoll.querySelector('#cart-glazing').innerText;
+        const cartPack = parentRoll.querySelector('#cart-pack');
+        console.log(cartPack);
+
+        parentRoll.remove();
+    }
+}
+console.log(cart);
+
+function updateCart(){
+    for (i = 0; i < cart.length; i++){
+        addRoll(cart[i]);
+    }
+}
+
+updateCart();
+

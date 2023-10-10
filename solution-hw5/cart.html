@@ -12,7 +12,7 @@
     <!-- Header -->
     <section id = "header">
         <div id = "header-logo">
-            <a href="/pui-hw/solution-hw5/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
+            <a href="/solution-hw5/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
                 alt="bun bun logo"/> </a> 
         </div>
             <!-- Product and Cart Options-->
@@ -41,14 +41,15 @@
             <div class = "cart-items">
                 <!-- Cart Item 1-->
                 <div  class = "cart-images">
-                    <a href="/pui-hw/solution-hw5/detail.html?roll=Original">
+                    <a href="/solution-hw5/detail.html?roll=Original">
                         <img id = "cart-roll-image" src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
-                        alt = "Original cinnamon roll"/>
+                        alt = "Original cinnamon roll"/> 
                     </a>
-                    <p class = "cart-remove">Remove</p>
+                    <button class = "cart-remove" onClick = removeItem(this)>Remove</button>
+                    <!-- <p class = "cart-remove" onClick = "deleteItem(this)">Remove</p> -->
                 </div>
                 <div class = "cart-description">
-                    <a id = "cart-type" href="/pui-hw/solution-hw5/detail.html?roll=Original">Original cinnamon roll</a>
+                    <a id = "cart-type" href="/solution-hw5/detail.html?roll=Original">Original cinnamon roll</a>
                     <p id = "cart-glazing">Glazing: Keep original</p>
                     <p id = "cart-pack">Pack Size: 1</p>
                 </div>

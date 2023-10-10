@@ -276,16 +276,23 @@ button{
     text-align: left;
 }
 
+.cart-remove{
+    text-decoration: underline;
+    border: none;
+    background-color: white;
+    text-align: left;
+}
 
 .cart-price {
     align-self: center;
-    flex-basis: 12%;
+    flex-basis: 15%;
     padding-bottom: 8%;
+    text-align: right;
+    font-size: 80%;
 }
 
 .cart-price > p{
     font-size: 90%;
-    text-align: right;
 }
 
 
@@ -300,9 +307,11 @@ button{
 }
 
 #cart-total{
-    align-self: flex-start;
+    align-self: flex-end;
     display:flex;
-    margin-left: 25%;
+    margin-right: 7%;
+    width: 70%;
+    text-align: right;
 }
 
 #cart-total > p{
@@ -310,8 +319,7 @@ button{
 }
 
 #checkout-price {
-    padding-left: 230%;
-    width: fit-content;
+    width: 100%;
 }
 
 #checkout-button {
