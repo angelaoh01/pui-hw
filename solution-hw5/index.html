@@ -2,26 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Product Gallery</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="hw2.css">
-    <script src= "price.js" type="text/javascript"></script>
+    <script defer src="rollsData.js"></script>
+    <script defer src="price.js"></script>
   </head>
   
   <body>
     <!-- Header -->
     <section id = "header">
         <div id = "header-logo">
-            <a href="/pui-hw/solution-hw4/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
+            <a href="/pui-hw/solution-hw5/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
                 alt="bun bun logo"/> </a> 
         </div>
             <!-- Product and Cart Options-->
         <div id = "header-navigation">
             <div id = "header-choices">
-                <div id = "products-main">
-                    <a href="/pui-hw/solution-hw4/gallery.html"> products </a>
+                <div id = "products">
+                    <a href="/pui-hw/solution-hw5/gallery.html"> products </a>
                 </div>
-                <div id = "cart">
-                    <a href="/pui-hw/solution-hw4/cart.html"> cart </a>
+                <div id = "cart-main">
+                    <a href="/pui-hw/solution-hw5/cart.html"> cart </a>
                 </div>
             </div> 
             <hr>
@@ -34,99 +35,40 @@
         </div> 
     </section>
 
-    <!-- The Gallery -->
-    <section id = "gallery">
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Original">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
-            alt = "Original cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Original">Original cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$2.49</p>
-        </div>
-      </div>
-      
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Apple">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/apple-cinnamon-roll.jpg?raw=true"
-            alt = "Apple cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Apple">Apple cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.49</p>
-        </div>
-      </div>
-
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Raisin">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/raisin-cinnamon-roll.jpg?raw=true"
-            alt = "Raisin cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Raisin">Raisin cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$2.99</p>
-        </div>
-      </div>
-
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Walnut">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/walnut-cinnamon-roll.jpg?raw=true"
-            alt = "Walnut cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Walnut">Walnut cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.49</p>
-        </div>
-      </div>
-
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Double-Chocolate">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/double-chocolate-cinnamon-roll.jpg?raw=true"
-            alt = "Double chocolate cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Double-Chocolate">Double chocolate cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.99</p>
-        </div>
-      </div>
-
-      <div class = "summary">
-        <div class = "roll-image">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Strawberry">
-            <img src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/strawberry-cinnamon-roll.jpg?raw=true"
-            alt = "Strawberry cinnamon roll"/>
-          </a>
-        </div>
-        <div class = "roll-description">
-          <a href="/pui-hw/solution-hw4/detail.html?roll=Strawberry">Strawberry cinnamon roll</a>
-        </div>
-        <div class = "roll-price">
-            <p>$3.99</p>
-        </div>
-      </div>
+    <!-- Shopping Cart-->
+    <section id = "cart-page">
+        <template id = "cart-template">
+            <div class = "cart-items">
+                <!-- Cart Item 1-->
+                <div  class = "cart-images">
+                    <a href="/pui-hw/solution-hw5/detail.html?roll=Original">
+                        <img id = "cart-roll-image" src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
+                        alt = "Original cinnamon roll"/> 
+                    </a>
+                    <button class = "cart-remove">Remove</button>
+                </div>
+                <div class = "cart-description">
+                    <a id = "cart-type" href="/pui-hw/solution-hw5/detail.html?roll=Original">Original cinnamon roll</a>
+                    <p id = "cart-glazing">Glazing: Keep original</p>
+                    <p id = "cart-pack">Pack Size: 1</p>
+                </div>
+                <!-- Prices -->
+                <div class = "cart-price">
+                    <p>$2.49</p>
+                </div>
+            </div>
+        </template>
     </section>
-
-    
+    <!-- Bottom Total Section-->
+    <section id= "checkout">
+        <hr id = "checkout-line">
+        <div id = "cart-total">
+            <p id="checkout-total">Total</p>
+            <p id="checkout-price">$29.94</p>
+        </div>
+        <button id = "checkout-button" type = "button">
+            Checkout
+        </button>
+    </section>
   </body>
 </html>
