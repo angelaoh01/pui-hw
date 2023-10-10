@@ -72,9 +72,9 @@ let glazingOptions = [
     currentPrice.innerText = "$" + Math.round(100*packChange)/100;
   }
 
-const cart = [];
+const cart = new Set();
 let totalPrice = 0;
-let index = "0";
+
 
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
@@ -85,6 +85,7 @@ class Roll {
     }
 }
 
+
 function addToCart(element){
     let glazingChoice = parseInt(document.querySelector('#glazing').value);
     let glazing = glazingOptions[glazingChoice].glazing;
@@ -93,7 +94,7 @@ function addToCart(element){
     let packSizeMultiple = packSizeOptions[packSizeChoice].size;
     let packSize = packSizeOptions[packSizeChoice].pack;
     let myRoll = new Roll(rollType, glazing, packSizeMultiple, Math.round(100*(rolls[rollType].basePrice+glazingPrice)*packSize)/100);
-    cart.unshift(myRoll);
+    cart.add(myRoll);
     return cart;
 }
 
@@ -101,10 +102,12 @@ let itemOne = new Roll(Object.keys(rolls)[0], glazingOptions[1].glazing, packSiz
 let itemTwo = new Roll(Object.keys(rolls)[3], glazingOptions[2].glazing, packSizeOptions[3].size, Math.round(100*(rolls.Walnut.basePrice+glazingOptions[2].price)*packSizeOptions[3].pack)/100);
 let itemThree = new Roll(Object.keys(rolls)[2], glazingOptions[1].glazing, packSizeOptions[1].size, Math.round(100*(rolls.Raisin.basePrice+glazingOptions[1].price)*packSizeOptions[1].pack)/100);
 let itemFour = new Roll(Object.keys(rolls)[1], glazingOptions[0].glazing, packSizeOptions[1].size, Math.round(100*(rolls.Apple.basePrice+glazingOptions[0].price)*packSizeOptions[1].pack)/100);
-cart.unshift(itemOne);
-cart.unshift(itemTwo);
-cart.unshift(itemThree);
-cart.unshift(itemFour);
+cart.add(itemOne);
+cart.add(itemTwo);
+cart.add(itemThree);
+cart.add(itemFour);
+
+
 
 function addRoll(roll){
     const template = document.querySelector('#cart-template');
@@ -112,6 +115,17 @@ function addRoll(roll){
     roll.element = clone.querySelector('.cart-items');
     const cartPageElement = document.querySelector('#cart-page');
     cartPageElement.prepend(roll.element);
+
+    const removeItem = document.querySelector(".cart-remove");
+    removeItem.addEventListener('click', () =>{
+        cart.delete(roll);
+        const parentImageRoll = removeItem.parentElement;
+        const parentRoll = parentImageRoll.parentElement;
+        parentRoll.remove();
+        const cartTotalPrice = document.querySelector('#checkout-price');
+        totalPrice = totalPrice - roll.basePrice;
+        cartTotalPrice.innerText = "$ " + Math.round(100*totalPrice)/100;
+    });
     updateElement(roll);
 }
 
@@ -132,24 +146,9 @@ function updateElement(roll){
     cartTotalPrice.innerText = "$ " + Math.round(100*totalPrice)/100;
 }
 
-function removeItem(button){
-    if (cart.length > 0){
-        const parentImageRoll = button.parentElement;
-        const parentRoll = parentImageRoll.parentElement;
-        console.log(parentRoll);
-        const rollType = parentRoll.querySelector('#cart-type').innerText;
-        const glazingOption = parentRoll.querySelector('#cart-glazing').innerText;
-        const cartPack = parentRoll.querySelector('#cart-pack');
-        console.log(cartPack);
-
-        parentRoll.remove();
-    }
-}
-console.log(cart);
-
 function updateCart(){
-    for (i = 0; i < cart.length; i++){
-        addRoll(cart[i]);
+    for (const roll of cart){
+        addRoll(roll);
     }
 }
 
