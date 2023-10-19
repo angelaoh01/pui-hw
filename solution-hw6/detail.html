@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="hw2.css">
+    <script defer src="rollsData.js"></script>
+    <script defer src="cart.js"></script>
+    <script defer src="price.js"></script>
+    
+  
+  <body>
+    <!-- Header -->
+    <section id = "header">
+        <div id = "header-logo">
+            <a href="/pui-hw/solution-hw6/gallery.html"> <img id = logo src="https://raw.githubusercontent.com/angelaoh01/pui-hw/00abb836f47e949dbedac7ba998d9bcb7e01436f/assets/logo/logo-01.svg"
+                alt="bun bun logo"/> </a> 
+        </div>
+            <!-- Product and Cart Options-->
+        <div id = "header-navigation">
+            <div id = "header-choices">
+                <div id = "products-main">
+                    <a href="/pui-hw/solution-hw6/gallery.html"> products </a>
+                </div>
+                <div id = "cart">
+                    <a href="/pui-hw/solution-hw6/cart.html"> cart </a>
+                </div>
+            </div> 
+            <hr>
+                <!-- Page Title -->
+            <div id = "header-title">
+                <h2 id = "detail-header-title">
+                    Original cinnamon roll
+                </h2>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Detail -->
+    <section id = "detail">
+         <!-- Image on Left Side-->
+        <section id = "detail-image-roll">
+            <a href="/pui-hw/solution-hw6/detail.html?roll=Original">
+                <img id= "detail-image" src = "https://github.com/angelaoh01/pui-hw/blob/main/assets/products/original-cinnamon-roll.jpg?raw=true"
+                width = "600"
+                alt = "Original cinnamon roll"/>
+            </a>
+        </section>
+
+        <!-- Description on Right Side-->
+        <section id = "detail-description">
+            <div id = "detail-comment">
+                <p>Customize our delicious,
+                    hand-made cinammon roll to
+                    your liking!</p>
+            </div>
+
+            <div id = "detail-options">
+                <div id = "glazing-option">
+                    <p>Glazing:</p>
+                    <div class = "dropdown">
+                        <select name="glazing" id="glazing" onChange = "glazingChange(this)">
+                            <option value="0">Keep original</option>
+                            <option value="1">Sugar milk</option>
+                            <option value="2">Vanilla milk</option>
+                            <option value="3">Double chocolate</option>
+                        </select>
+                    </div>
+                </div>
+                <div id = "pack-size">
+                    <p>Pack size:</p>
+                    <div class = "dropdown">
+                        <select name="size" id="size" onChange = "packChange(this)">
+                            <option value="0">1</option>
+                            <option value="1">3</option>
+                            <option value="2">6</option>
+                            <option value="3">12</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detail-total">
+                <p id = "detail-price"> 
+                    2.49
+                </p>
+                <button type="button" onClick= "addToCart(this)">
+                    Add to cart
+                </button>    
+            </div>
+        </section>
+    </section>
+    </body>
+</html>
